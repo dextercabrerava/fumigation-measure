@@ -25,10 +25,10 @@ export function Header() {
     <header className="sticky top-0 z-30 border-t-[6px] border-ink bg-paper/95 backdrop-blur border-b border-line">
       <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-3 sm:px-6">
         <Link href="/" className="flex min-w-0 items-center gap-3">
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-ink text-[15px] font-bold text-white">NG</span>
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-ink text-[15px] font-bold text-white">FM</span>
           <span className="min-w-0">
             <span className="block truncate text-[17px] font-bold leading-tight tracking-tight">Fumigation Measure</span>
-            <span className="block truncate text-xs text-mute">Nextgen Pest Solutions · Inspections</span>
+            <span className="block truncate text-xs text-mute">Structural fumigation · Inspections</span>
           </span>
         </Link>
         <span className="ml-auto hidden shrink-0 rounded-full border border-ink px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider sm:inline">
