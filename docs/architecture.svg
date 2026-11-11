@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="990" viewBox="0 0 1640 990" font-family="Space Grotesk, Helvetica, Arial, sans-serif">
+<defs><marker id="h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a3d44"/></marker>
+<marker id="hp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9aa0a9"/></marker></defs>
+<rect width="1640" height="990" fill="#ffffff"/>
+<rect width="1640" height="8" fill="#171717"/>
+<text x="56" y="76" font-size="34" font-weight="700" fill="#171717" letter-spacing="-0.6">Fumigation Measure, production architecture</text>
+<text x="56" y="108" font-size="17" fill="#6b7079">Nextgen Pest Solutions · what the demo builds today and what production adds</text>
+<rect x="1204" y="56" width="34" height="20" rx="5" fill="#fff" stroke="#171717" stroke-width="2.5"/>
+<text x="1248" y="71" font-size="14" fill="#171717" font-weight="600">Built in demo</text>
+<rect x="1374" y="56" width="34" height="20" rx="5" fill="#f4f5f7" stroke="#171717" stroke-width="2.5"/>
+<text x="1418" y="71" font-size="14" fill="#171717" font-weight="600">Mock data in demo</text>
+<rect x="1204" y="88" width="34" height="20" rx="5" fill="#fff" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="1248" y="103" font-size="14" fill="#6b7079" font-weight="600">Planned for production</text>
+<text x="56" y="166" font-size="13" font-weight="700" fill="#6b7079" letter-spacing="1.6">INSPECTOR'S PHONE</text>
+<line x1="56" y1="176" x2="436" y2="176" stroke="#171717" stroke-width="3"/>
+<text x="630" y="166" font-size="13" font-weight="700" fill="#6b7079" letter-spacing="1.6">SERVER · NEXT.JS ON VERCEL</text>
+<line x1="630" y1="176" x2="1010" y2="176" stroke="#171717" stroke-width="3"/>
+<text x="1204" y="166" font-size="13" font-weight="700" fill="#6b7079" letter-spacing="1.6">DATA AND AI SERVICES</text>
+<line x1="1204" y1="176" x2="1584" y2="176" stroke="#171717" stroke-width="3"/>
+<line x1="246.0" y1="292" x2="246.0" y2="322" stroke="#3a3d44" stroke-width="2" marker-end="url(#h)"/>
+<line x1="246.0" y1="422" x2="246.0" y2="452" stroke="#3a3d44" stroke-width="2" marker-end="url(#h)"/>
+<line x1="246.0" y1="552" x2="246.0" y2="582" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#hp)"/>
+<line x1="436" y1="244.0" x2="626" y2="244.0" stroke="#3a3d44" stroke-width="2" marker-end="url(#h)"/>
+<rect x="490.8" y="222.0" width="80.39999999999999" height="18" fill="#fff"/>
+<text x="531.0" y="235.0" font-size="11.5" font-weight="700" fill="#3a3d44" text-anchor="middle" letter-spacing="0.6">ADDRESS</text>
+<line x1="820.0" y1="292" x2="820.0" y2="322" stroke="#3a3d44" stroke-width="2" marker-end="url(#h)"/>
+<line x1="1010" y1="344.0" x2="1200" y2="274.0" stroke="#3a3d44" stroke-width="2" marker-end="url(#h)"/>
+<rect x="1060.2" y="287.0" width="89.6" height="18" fill="#fff"/>
+<text x="1105.0" y="300.0" font-size="11.5" font-weight="700" fill="#3a3d44" text-anchor="middle" letter-spacing="0.6">MESSAGES</text>
+<line x1="1010" y1="374.0" x2="1200" y2="374.0" stroke="#3a3d44" stroke-width="2" marker-end="url(#h)"/>
+<rect x="1064.8" y="352.0" width="80.39999999999999" height="18" fill="#fff"/>
+<text x="1105.0" y="365.0" font-size="11.5" font-weight="700" fill="#3a3d44" text-anchor="middle" letter-spacing="0.6">RECORDS</text>
+<line x1="1010" y1="404.0" x2="1200" y2="474.0" stroke="#3a3d44" stroke-width="2" marker-end="url(#h)"/>
+<rect x="1055.6" y="417.0" width="98.8" height="18" fill="#fff"/>
+<text x="1105.0" y="430.0" font-size="11.5" font-weight="700" fill="#3a3d44" text-anchor="middle" letter-spacing="0.6">FOOTPRINT</text>
+<line x1="436" y1="634.0" x2="626" y2="504.0" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#hp)"/>
+<rect x="504.6" y="547.0" width="52.8" height="18" fill="#fff"/>
+<text x="531.0" y="560.0" font-size="11.5" font-weight="700" fill="#9aa0a9" text-anchor="middle" letter-spacing="0.6">SYNC</text>
+<line x1="820.0" y1="552" x2="820.0" y2="582" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#hp)"/>
+<line x1="820.0" y1="682" x2="820.0" y2="712" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#hp)"/>
+<line x1="436" y1="764.0" x2="626" y2="534.0" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#hp)"/>
+<rect x="495.4" y="627.0" width="71.19999999999999" height="18" fill="#fff"/>
+<text x="531.0" y="640.0" font-size="11.5" font-weight="700" fill="#9aa0a9" text-anchor="middle" letter-spacing="0.6">PHOTOS</text>
+<line x1="1010" y1="504.0" x2="1200" y2="604.0" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#hp)"/>
+<rect x="1069.4" y="532.0" width="71.19999999999999" height="18" fill="#fff"/>
+<text x="1105.0" y="545.0" font-size="11.5" font-weight="700" fill="#9aa0a9" text-anchor="middle" letter-spacing="0.6">PHOTOS</text>
+<line x1="1010" y1="634.0" x2="1200" y2="764.0" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#hp)"/>
+<rect x="1055.6" y="677.0" width="98.8" height="18" fill="#fff"/>
+<text x="1105.0" y="690.0" font-size="11.5" font-weight="700" fill="#9aa0a9" text-anchor="middle" letter-spacing="0.6">CONFIRMED</text>
+<rect x="56" y="196" width="380" height="96" rx="14" fill="#fff" stroke="#171717" stroke-width="2.5"/>
+<rect x="56" y="196" width="380" height="6" rx="3" fill="#171717"/>
+<text x="76" y="236" font-size="20" font-weight="700" fill="#171717" letter-spacing="-0.3">Inspection screen</text>
+<text x="76" y="266" font-size="14.5" fill="#6b7079">Sections, ft + in entry, sticky total</text>
+<rect x="366.0" y="214" width="56.0" height="22" rx="11" fill="#171717"/>
+<text x="394.0" y="229.5" font-size="11" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">BUILT</text>
+<rect x="56" y="326" width="380" height="96" rx="14" fill="#fff" stroke="#171717" stroke-width="2.5"/>
+<rect x="56" y="326" width="380" height="6" rx="3" fill="#171717"/>
+<text x="76" y="366" font-size="20" font-weight="700" fill="#171717" letter-spacing="-0.3">Calc + validation</text>
+<text x="76" y="396" font-size="14.5" fill="#6b7079">lib/calc.ts · lib/validation.ts · Zod</text>
+<rect x="366.0" y="344" width="56.0" height="22" rx="11" fill="#171717"/>
+<text x="394.0" y="359.5" font-size="11" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">BUILT</text>
+<rect x="56" y="456" width="380" height="96" rx="14" fill="#fff" stroke="#171717" stroke-width="2.5"/>
+<rect x="56" y="456" width="380" height="6" rx="3" fill="#171717"/>
+<text x="76" y="496" font-size="20" font-weight="700" fill="#171717" letter-spacing="-0.3">Local state</text>
+<text x="76" y="526" font-size="14.5" fill="#6b7079">React state + localStorage</text>
+<rect x="366.0" y="474" width="56.0" height="22" rx="11" fill="#171717"/>
+<text x="394.0" y="489.5" font-size="11" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">BUILT</text>
+<rect x="56" y="586" width="380" height="96" rx="14" fill="#fff" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="76" y="626" font-size="20" font-weight="700" fill="#3a3d44" letter-spacing="-0.3">Offline DB + sync queue</text>
+<text x="76" y="656" font-size="14.5" fill="#6b7079">IndexedDB, syncs when signal is back</text>
+<rect x="350.8" y="604" width="71.19999999999999" height="22" rx="11" fill="#fff" stroke="#9aa0a9"/>
+<text x="386.4" y="619.5" font-size="11" font-weight="700" fill="#6b7079" text-anchor="middle" letter-spacing="1">PLANNED</text>
+<rect x="56" y="716" width="380" height="96" rx="14" fill="#fff" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="76" y="756" font-size="20" font-weight="700" fill="#3a3d44" letter-spacing="-0.3">Photo capture</text>
+<text x="76" y="786" font-size="14.5" fill="#6b7079">Each elevation, with a tape reference</text>
+<rect x="350.8" y="734" width="71.19999999999999" height="22" rx="11" fill="#fff" stroke="#9aa0a9"/>
+<text x="386.4" y="749.5" font-size="11" font-weight="700" fill="#6b7079" text-anchor="middle" letter-spacing="1">PLANNED</text>
+<rect x="630" y="196" width="380" height="96" rx="14" fill="#fff" stroke="#171717" stroke-width="2.5"/>
+<rect x="630" y="196" width="380" height="6" rx="3" fill="#171717"/>
+<text x="650" y="236" font-size="20" font-weight="700" fill="#171717" letter-spacing="-0.3">/api/prefill route</text>
+<text x="650" y="266" font-size="14.5" fill="#6b7079">Zod-checked input, mock fallback</text>
+<rect x="940.0" y="214" width="56.0" height="22" rx="11" fill="#171717"/>
+<text x="968.0" y="229.5" font-size="11" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">BUILT</text>
+<rect x="630" y="326" width="380" height="96" rx="14" fill="#fff" stroke="#171717" stroke-width="2.5"/>
+<rect x="630" y="326" width="380" height="6" rx="3" fill="#171717"/>
+<text x="650" y="366" font-size="20" font-weight="700" fill="#171717" letter-spacing="-0.3">Prefill agent</text>
+<text x="650" y="396" font-size="14.5" fill="#6b7079">Proposes values + confidence</text>
+<rect x="940.0" y="344" width="56.0" height="22" rx="11" fill="#171717"/>
+<text x="968.0" y="359.5" font-size="11" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">BUILT</text>
+<rect x="630" y="456" width="380" height="96" rx="14" fill="#fff" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="650" y="496" font-size="20" font-weight="700" fill="#3a3d44" letter-spacing="-0.3">Sync API + auth</text>
+<text x="650" y="526" font-size="14.5" fill="#6b7079">Inspector login, company roles</text>
+<rect x="924.8" y="474" width="71.19999999999999" height="22" rx="11" fill="#fff" stroke="#9aa0a9"/>
+<text x="960.4" y="489.5" font-size="11" font-weight="700" fill="#6b7079" text-anchor="middle" letter-spacing="1">PLANNED</text>
+<rect x="630" y="586" width="380" height="96" rx="14" fill="#fff" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="650" y="626" font-size="20" font-weight="700" fill="#3a3d44" letter-spacing="-0.3">Postgres</text>
+<text x="650" y="656" font-size="14.5" fill="#6b7079">Inspections + AI-vs-confirmed log</text>
+<rect x="924.8" y="604" width="71.19999999999999" height="22" rx="11" fill="#fff" stroke="#9aa0a9"/>
+<text x="960.4" y="619.5" font-size="11" font-weight="700" fill="#6b7079" text-anchor="middle" letter-spacing="1">PLANNED</text>
+<rect x="630" y="716" width="380" height="96" rx="14" fill="#fff" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="650" y="756" font-size="20" font-weight="700" fill="#3a3d44" letter-spacing="-0.3">Dosage + scheduling</text>
+<text x="650" y="786" font-size="14.5" fill="#6b7079">Finalized cu ft becomes the job</text>
+<rect x="924.8" y="734" width="71.19999999999999" height="22" rx="11" fill="#fff" stroke="#9aa0a9"/>
+<text x="960.4" y="749.5" font-size="11" font-weight="700" fill="#6b7079" text-anchor="middle" letter-spacing="1">PLANNED</text>
+<rect x="1204" y="196" width="380" height="96" rx="14" fill="#fff" stroke="#171717" stroke-width="2.5"/>
+<rect x="1204" y="196" width="380" height="6" rx="3" fill="#171717"/>
+<text x="1224" y="236" font-size="20" font-weight="700" fill="#171717" letter-spacing="-0.3">Claude API</text>
+<text x="1224" y="266" font-size="14.5" fill="#6b7079">claude-opus-5-5 with tool calling</text>
+<rect x="1514.0" y="214" width="56.0" height="22" rx="11" fill="#171717"/>
+<text x="1542.0" y="229.5" font-size="11" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">BUILT</text>
+<rect x="1204" y="326" width="380" height="96" rx="14" fill="#f4f5f7" stroke="#171717" stroke-width="2.5"/>
+<rect x="1204" y="326" width="380" height="6" rx="3" fill="#171717"/>
+<text x="1224" y="366" font-size="20" font-weight="700" fill="#171717" letter-spacing="-0.3">Property data API</text>
+<text x="1224" y="396" font-size="14.5" fill="#6b7079">Parcel, stories, roof type</text>
+<rect x="1422.8" y="344" width="147.2" height="22" rx="11" fill="#171717"/>
+<text x="1496.4" y="359.5" font-size="11" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">MOCK JSON IN DEMO</text>
+<rect x="1204" y="456" width="380" height="96" rx="14" fill="#f4f5f7" stroke="#171717" stroke-width="2.5"/>
+<rect x="1204" y="456" width="380" height="6" rx="3" fill="#171717"/>
+<text x="1224" y="496" font-size="20" font-weight="700" fill="#171717" letter-spacing="-0.3">Aerial roof API</text>
+<text x="1224" y="526" font-size="14.5" fill="#6b7079">Length × width, pitch, image quality</text>
+<rect x="1422.8" y="474" width="147.2" height="22" rx="11" fill="#171717"/>
+<text x="1496.4" y="489.5" font-size="11" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">MOCK JSON IN DEMO</text>
+<rect x="1204" y="586" width="380" height="96" rx="14" fill="#fff" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="1224" y="626" font-size="20" font-weight="700" fill="#3a3d44" letter-spacing="-0.3">Computer vision</text>
+<text x="1224" y="656" font-size="14.5" fill="#6b7079">Eave + peak from photos, feeds agent</text>
+<rect x="1498.8" y="604" width="71.19999999999999" height="22" rx="11" fill="#fff" stroke="#9aa0a9"/>
+<text x="1534.4" y="619.5" font-size="11" font-weight="700" fill="#6b7079" text-anchor="middle" letter-spacing="1">PLANNED</text>
+<rect x="1204" y="716" width="380" height="96" rx="14" fill="#fff" stroke="#9aa0a9" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="1224" y="756" font-size="20" font-weight="700" fill="#3a3d44" letter-spacing="-0.3">Accuracy tracking</text>
+<text x="1224" y="786" font-size="14.5" fill="#6b7079">Inspector edits tune confidence</text>
+<rect x="1498.8" y="734" width="71.19999999999999" height="22" rx="11" fill="#fff" stroke="#9aa0a9"/>
+<text x="1534.4" y="749.5" font-size="11" font-weight="700" fill="#6b7079" text-anchor="middle" letter-spacing="1">PLANNED</text>
+<text x="56" y="880" font-size="15" fill="#171717" font-weight="700">Rule that holds in every version:</text>
+<text x="56" y="906" font-size="15" fill="#6b7079">AI only proposes. Every value carries a confidence score, anything under 60% is flagged for human review,</text>
+<text x="56" y="930" font-size="15" fill="#6b7079">and an inspection cannot be finalized until the inspector has confirmed or edited every AI value. Dosage is set from the confirmed volume.</text>
+</svg>

@@ -1,0 +1,71 @@
+{
+  "_notice": "MOCK DATA for the demo. Not pulled from any real county record or imagery provider. In production these come from a property-data API and an aerial imagery / roof-measurement API.",
+  "properties": [
+    {
+      "match": ["4127 palmetto ridge"],
+      "records": {
+        "source": "MOCK county property appraiser record (sample data)",
+        "parcel_id": "U-14-28-18-3QK-000012-00043.0",
+        "year_built": 1987,
+        "living_area_sqft": 1846,
+        "stories": 1,
+        "construction": "CBS (concrete block + stucco)",
+        "roof_type": "Gable",
+        "roof_material": "Asphalt shingle",
+        "structures": ["Main house"]
+      },
+      "footprint": {
+        "source": "MOCK aerial roof footprint (sample data)",
+        "capture_date": "2026-08-19",
+        "segments": [
+          { "label": "Main house", "length_ft": 61.4, "width_ft": 33.1, "roof_form": "gable", "pitch": "5/12", "footprint_confidence": 0.93, "height_hint": "single storey, slab on grade", "imagery_quality": "clear" }
+        ]
+      }
+    },
+    {
+      "match": ["1880 coquina"],
+      "records": {
+        "source": "MOCK county property appraiser record (sample data)",
+        "parcel_id": "0057-09-0031",
+        "year_built": 1994,
+        "living_area_sqft": 2418,
+        "stories": 1,
+        "construction": "Frame with stucco",
+        "roof_type": "Gable, multiple",
+        "roof_material": "Concrete tile",
+        "structures": ["Main house", "Attached garage", "Pool bath addition (permitted 2009)"]
+      },
+      "footprint": {
+        "source": "MOCK aerial roof footprint (sample data)",
+        "capture_date": "2026-07-02",
+        "segments": [
+          { "label": "Main house", "length_ft": 58.2, "width_ft": 34.4, "roof_form": "gable", "pitch": "6/12", "footprint_confidence": 0.91, "height_hint": "single storey, raised slab", "imagery_quality": "clear" },
+          { "label": "Attached garage", "length_ft": 24.3, "width_ft": 22.6, "roof_form": "gable", "pitch": "5/12", "footprint_confidence": 0.84, "height_hint": "single storey; ridge partly hidden by live oak canopy", "imagery_quality": "partial tree cover" },
+          { "label": "Pool bath addition", "length_ft": 12.2, "width_ft": 10.4, "roof_form": "gable", "pitch": "4/12", "footprint_confidence": 0.79, "height_hint": "single storey, low eave", "imagery_quality": "clear" }
+        ]
+      }
+    },
+    {
+      "match": ["2214 banyan hollow"],
+      "records": {
+        "source": "MOCK county property appraiser record (sample data)",
+        "parcel_id": "29-22-31-0815-00-210",
+        "year_built": 2003,
+        "living_area_sqft": 3127,
+        "stories": 2,
+        "construction": "CBS first floor, frame second floor",
+        "roof_type": "Gable",
+        "roof_material": "Asphalt shingle",
+        "structures": ["Main house", "Attached garage"]
+      },
+      "footprint": {
+        "source": "MOCK aerial roof footprint (sample data)",
+        "capture_date": "2026-09-27",
+        "segments": [
+          { "label": "Main house", "length_ft": 52.7, "width_ft": 31.9, "roof_form": "gable", "pitch": "7/12", "footprint_confidence": 0.9, "height_hint": "two storey", "imagery_quality": "clear" },
+          { "label": "Attached garage", "length_ft": 23.8, "width_ft": 21.5, "roof_form": "gable", "pitch": "6/12", "footprint_confidence": 0.88, "height_hint": "single storey", "imagery_quality": "clear" }
+        ]
+      }
+    }
+  ]
+}
