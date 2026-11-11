@@ -1,13 +1,19 @@
 # Fumigation Measure (demo)
 
-A mobile-first web app for structural fumigation inspectors. The inspector measures each section of a structure (eave height, peak height, length, width), and the app works out average height, cubic volume per section, and total cubic feet. An AI prefill agent proposes measurements from property records and a roof footprint, and the inspector confirms or edits every value.
+> **Demo built for my application to Nextgen Pest Solutions.** It's a presentation piece, not production software, and it isn't affiliated with or endorsed by them.
+>
+> - **All property and roof data is MOCK.** The two data tools read [`data/mock-property-data.json`](data/mock-property-data.json). Nothing comes from a real county record or imagery provider.
+> - **The Claude tool-calling path is wired but isn't used in this deployment.** No Anthropic API key is set, so AI prefill runs a rules-based fallback over the same two mock tools. Every response says which mode ran ("Canned mock agent" in the UI).
+> - Inspections are saved in the browser's localStorage only. Customer and inspector names are made up.
 
-**This is a demo, not production.** It runs on sample data, stores everything in the browser, and the property and roof "APIs" return clearly labelled mock JSON.
+Live: https://fumigation-measure.vercel.app
+
+A mobile-first web app for structural fumigation inspectors. The inspector measures each section of a structure (eave height, peak height, length, width), and the app works out average height, cubic volume per section, and total cubic feet. An AI prefill step proposes measurements from property records and a roof footprint, and the inspector confirms or edits every value.
 
 ![Architecture](docs/architecture.png)
 
 <details open>
-<summary>Same diagram in Mermaid (solid = built in demo, grey = mock data in demo, dashed = planned)</summary>
+<summary>Same diagram in Mermaid (solid = built, grey = mock data, black dashed = wired but no key, grey dashed = planned)</summary>
 
 ```mermaid
 flowchart LR
@@ -20,13 +26,13 @@ flowchart LR
   end
   subgraph Server["Server: Next.js on Vercel"]
     API["/api/prefill<br/>Zod-checked, mock fallback"]:::built
-    AGENT["Prefill agent<br/>values + confidence"]:::built
+    AGENT["Prefill agent<br/>Claude loop + rules fallback (active)"]:::built
     SYNC["Sync API + auth"]:::planned
     DB[("Postgres<br/>inspections + AI-vs-confirmed log")]:::planned
     HAND["Dosage + scheduling handoff"]:::planned
   end
   subgraph Services["Data and AI services"]
-    CLAUDE["Claude API<br/>claude-opus-5-5, tool calling"]:::built
+    CLAUDE["Claude API<br/>wired in prefill.ts, not called (no key)"]:::wired
     PROP["Property data API<br/>(mock JSON in demo)"]:::mock
     ROOF["Aerial roof API<br/>(mock JSON in demo)"]:::mock
     CV["Computer vision<br/>eave + peak from photos"]:::planned
@@ -34,7 +40,7 @@ flowchart LR
   end
   UI --> CALC --> LS -.-> IDB
   UI -- address --> API --> AGENT
-  AGENT -- messages --> CLAUDE
+  AGENT -. with API key .-> CLAUDE
   AGENT -- get_property_records --> PROP
   AGENT -- get_roof_footprint --> ROOF
   IDB -. sync .-> SYNC
@@ -44,11 +50,31 @@ flowchart LR
   CV -. heights .-> AGENT
   DB -. confirmed values .-> ACC
   classDef built fill:#ffffff,stroke:#171717,stroke-width:2.5px,color:#171717
+  classDef wired fill:#ffffff,stroke:#171717,stroke-width:2.5px,stroke-dasharray:8 4,color:#171717
   classDef mock fill:#f4f5f7,stroke:#171717,stroke-width:2.5px,color:#171717
   classDef planned fill:#ffffff,stroke:#9aa0a9,stroke-width:2px,stroke-dasharray:6 4,color:#3a3d44
 ```
 
 </details>
+
+### Built, mock, or planned
+
+Matches the diagram: solid boxes are built, grey boxes run on mock data, the black dashed box is wired but unused (no key), and grey dashed boxes are planned.
+
+| Component | Status in this demo | Where |
+|---|---|---|
+| Inspection screen, sections, ft + in entry, sticky total | **Built** | `app/inspections/[id]/page.tsx`, `components/` |
+| Volume calculation | **Built** (Vitest-tested) | `lib/calc.ts` |
+| Validation: hard errors, soft warnings, finalize gate | **Built** (Vitest-tested) | `lib/validation.ts` |
+| Local state | **Built**, localStorage only | `lib/store.tsx` |
+| `/api/prefill` route | **Built** | `app/api/prefill/route.ts` |
+| Prefill agent: Claude tool-calling loop | **Built and wired, not active** (no API key, so the rules-based fallback runs) | `lib/agent/prefill.ts` (`runLive`, `runMock`) |
+| Claude API | **Wired, not called** in this deployment | `lib/agent/prefill.ts` |
+| Property data API (`get_property_records`) | **Mock**: tool is real, data is mock JSON | `lib/agent/property-tools.ts` |
+| Aerial roof API (`get_roof_footprint`) | **Mock**: tool is real, data is mock JSON | `lib/agent/property-tools.ts` |
+| Offline DB + sync queue, sync API + auth, Postgres | **Planned** | — |
+| Photo capture, computer vision for heights | **Planned** | — |
+| Accuracy tracking, dosage + scheduling handoff | **Planned** | — |
 
 ## What the demo shows
 
@@ -58,7 +84,7 @@ flowchart LR
   - *Hard errors* block the section: an empty or zero value, or a peak lower than the eave.
   - *Soft warnings* need a "confirm" tap: an eave under 7 ft or over 30 ft, a peak over 45 ft, a roof rise over 25 ft, a length or width under 4 ft or over 200 ft, or a section more than 6× the next-largest one (usually a typo).
   - Why it matters: fumigant dosage is calculated from cubic volume. Get the volume wrong and the dose is wrong too.
-- **AI prefill** in [`lib/agent/prefill.ts`](lib/agent/prefill.ts): Claude calls `get_property_records(address)` and `get_roof_footprint(address)` and returns one proposal per section, with a confidence for every value. Each value shows an "AI suggested · 82% confidence · Confirm" badge. Anything under 60% also gets a **Needs human review** flag. AI never overwrites a value the inspector typed, and the inspection can't be finalized while any AI value is unconfirmed.
+- **AI prefill** in [`lib/agent/prefill.ts`](lib/agent/prefill.ts): the agent calls `get_property_records(address)` and `get_roof_footprint(address)` (both MOCK) and returns one proposal per section, with a confidence for every value. With an API key, Claude drives those tool calls. In this deployment there's no key, so a rules-based fallback calls the same tools and returns proposals in the same shape. Each value shows an "AI suggested · 82% confidence · Confirm" badge. Anything under 60% also gets a **Needs human review** flag. AI never overwrites a value the inspector typed, and the inspection can't be finalized while any AI value is unconfirmed.
 - **Summary screen**: a per-section table (stacked cards on a phone), the total, a list of anything still blocking, and **Finalize**.
 - **Demo polish**: two sample inspections load on first run (a single-section house in Tampa, and a Sarasota house with a garage and a pool bath addition). There's a "Demo · sample data" badge and a **Reset demo** button.
 
@@ -71,7 +97,7 @@ flowchart LR
 | Formula documented as exact for a **simple gable** | Box to the eave plus a triangular roof prism. For hip roofs it overestimates slightly, which is the safe side for dosage. |
 | Two tiers of checks | Hard errors are never right. Soft warnings are sometimes right (a tall church), so the inspector confirms instead of being blocked. |
 | AI fills only empty fields; every AI value starts *pending* | The inspector is accountable for the number. AI saves typing but never decides. |
-| Live Claude with a mock fallback | No key, a timeout or an API error all fall back to the same tools plus fixed rules. The demo can't break live. |
+| Claude tool calling with a rules-based fallback | No key, an API error, or a live run slower than 25 seconds all fall back to the same tools plus fixed rules, well inside the route's 60 s limit. The demo can't break live. |
 | `localStorage` instead of a database | Enough for a 4-minute demo. The production path is on the diagram. |
 
 ## Run it
@@ -82,7 +108,7 @@ npm run dev          # http://localhost:3000
 npm test             # Vitest: calc, validation, mock agent
 ```
 
-Optional, for live AI prefill:
+Optional, to run the Claude path locally (the public deployment deliberately doesn't):
 
 ```bash
 echo "ANTHROPIC_API_KEY=sk-ant-..." > .env.local
