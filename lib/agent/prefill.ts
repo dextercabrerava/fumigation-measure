@@ -16,6 +16,22 @@ import { getPropertyRecords, getRoofFootprint } from "./property-tools";
 
 export const MODEL = "claude-opus-5-5";
 
+/**
+ * Hard ceiling for the whole live run (every turn, every tool call). Kept well
+ * under the route's maxDuration (60 s) so a slow model can never get the
+ * function killed before the mock fallback answers.
+ */
+export const LIVE_DEADLINE_MS = 25_000;
+
+/** Resolve with `work`, or reject once `ms` passes, whichever comes first. */
+export function withDeadline<T>(work: Promise<T>, ms: number): Promise<T> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const deadline = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`timed out after ${ms / 1000}s`)), ms);
+  });
+  return Promise.race([work, deadline]).finally(() => clearTimeout(timer));
+}
+
 // ---------- what the agent returns ----------
 
 const Conf = z.number().min(0).max(1);
@@ -131,7 +147,7 @@ How to work:
 // ---------- live run ----------
 
 async function runLive(req: PrefillRequest, apiKey: string): Promise<PrefillResult> {
-  const client = new Anthropic({ apiKey, timeout: 40_000, maxRetries: 1 });
+  const client = new Anthropic({ apiKey, timeout: 20_000, maxRetries: 0 });
   const toolCalls: PrefillResult["toolCalls"] = [];
   const messages: Anthropic.Beta.BetaMessageParam[] = [
     {
@@ -244,7 +260,7 @@ export async function prefill(req: PrefillRequest): Promise<PrefillResult> {
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key || process.env.PREFILL_MODE === "mock") return runMock(req, "No API key set, using canned mock agent");
   try {
-    return await runLive(req, key);
+    return await withDeadline(runLive(req, key), LIVE_DEADLINE_MS);
   } catch (err) {
     const why = err instanceof Anthropic.APIError ? `Claude API error ${err.status ?? ""}`.trim() : err instanceof Error ? err.message : "unknown error";
     console.error("[prefill] live run failed, falling back to mock:", why);

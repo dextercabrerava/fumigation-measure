@@ -28,3 +28,15 @@ describe("mock prefill agent", () => {
     expect(r.proposal!.sections).toEqual([]);
   });
 });
+
+describe("live-run deadline", () => {
+  it("rejects a run that is slower than the deadline", async () => {
+    const { withDeadline } = await import("@/lib/agent/prefill");
+    const slow = new Promise((r) => setTimeout(() => r("late"), 200));
+    await expect(withDeadline(slow, 20)).rejects.toThrow(/timed out/);
+  });
+  it("passes a fast run through untouched", async () => {
+    const { withDeadline } = await import("@/lib/agent/prefill");
+    await expect(withDeadline(Promise.resolve("ok"), 1000)).resolves.toBe("ok");
+  });
+});
